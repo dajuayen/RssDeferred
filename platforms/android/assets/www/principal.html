@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>SQLite-JQuery Reader</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src: 'self' 'unsafe-inline' 'unsafe-eval'">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+      
+
+    </head>
+    <body data-role="page" id="principal">
+
+        <header data-role="header" data-position="fixed" data-theme="b">
+            <h1> * PROGRAMA LECTOR DE RSS * </h1>
+            <nav data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="grid" class="ui-btn-active" onclick="descargar();">Summary</a></li>
+                    <li><a href="#" data-icon="star" data-role="button" onclick="enableTimer();">FAVS</a></li>
+                    <li><a href="#" data-icon="delete" data-role="button" onclick="registerForBootStart();">eliminar</a></li>
+                    <li><a href="#" data-icon="gear" data-role="button" onclick="registerForUpdates();">Setup</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <article >
+            <div data-role="content" data-position="fixed" data-theme="c">
+                <table>
+                    <tr>
+                        <th>Service</th><th>Timer</th><th>Boot</th><th>Listen</th>
+                    </tr>
+                    <tr>
+                        <td><div id="serviceStatus"></div></td>
+                        <td><div id="timerStatus"></div></td>
+                        <td><div id="bootStatus"></div></td>
+                        <td><div id="listenStatus"></div></td>                        
+                    </tr>
+                    <tr>
+                        <th align="left">Fecha guardada</th>
+                        <td colspan=2 align="center"><label id="fechaTxt"></label></td>
+                    </tr>
+                    <tr>
+                        <th align="left">Latest Result</th>
+                    </tr>
+                    <tr>
+                        <td colspan=3 align="center"><div id="resultMessage"></div></td>
+                    </tr>
+                </table>
+            </div>
+            <div data-role="content" data-theme="d">
+                <ul id="lista" data-role="listview" data-inset="true" data-theme="d" data-divider-theme="a" data-count-theme="a"></ul>  
+            </div>
+        </article>
+
+        <footer data-role="footer" data-theme="e" data-position="fixed">
+            <nav data-role="navbar" data-position="fixed">
+                <ul>
+                    <li><a href="#" data-icon="grid">Summary</a></li>
+                    <li><a href="#" data-icon="star" class="ui-btn-active">Favs</a></li>
+                    <li><a href="#" data-icon="gear">Setup</a></li>
+                </ul>
+            </nav>
+            <div data-role="content" data-theme="b">
+                <h4> *** Plugin Service + Preferences + SQLite + JQuery + ReaderRSS *** </h4>
+            </div>
+                        
+        </footer> 
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/sharedPref.js"></script>
+        <script type="text/javascript" src="js/base_datos.js"></script>
+        <script type="text/javascript" src="js/operaServicio.js"></script>        
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        <!-- <script type="text/javascript" src="myService.js"></script> -->
+        <script>
+            iniciarServicio();
+        </script>
+    </body>
+</html>

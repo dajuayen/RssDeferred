@@ -1,0 +1,28 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.prueba.basica.deferred"
+        },
+        "com.red_folder.phonegap.plugin.backgroundservice.sample": {
+            "PACKAGE_NAME": "com.prueba.basica.deferred"
+        }
+    },
+    "dependent_plugins": {
+        "com.red_folder.phonegap.plugin.backgroundservice": {
+            "PACKAGE_NAME": "com.prueba.basica.deferred"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.prueba.basica.deferred"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.prueba.basica.deferred"
+        }
+    }
+}
