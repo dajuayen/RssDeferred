@@ -40,11 +40,9 @@ function iniciarServicio() {
     document.addEventListener('deviceready', function() {
         alert('Entro en iniciarServicio');
         myService = cordova.plugins.myService;
-        mostrarLista();
-        
-    }, true);
-    $.when().then(arrancar);
-    
+        arrancar();
+//        $.when(mostrarLista2).then(arrancar);  
+    }, true); 
 }
 
 /**

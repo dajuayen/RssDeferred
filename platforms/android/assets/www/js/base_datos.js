@@ -10,15 +10,9 @@ var FEED_URL = 'http://www.larioja.com/rss/2.0/?seccion=ultima-hora';
 var descargados = [];
 
 function mostrarLista() {
-    document.addEventListener("deviceready", crearBD, false);
-    
-//    $.when(enviaFeedsAFuncion2(mostrarListaRSS)).then(buscarRSS);
-//    enviaFeedsAFuncion2(mostrarListaRSS);
-    //setTimeout(buscarRSS, 500 * 5);
-//    $(document).ajaxSuccess(function() {
-//        enviaFeedsAFuncion2(mostrarListaRSS);
-//    });   
+    document.addEventListener("deviceready", crearBD, false);  
 }
+
 function descargar() {
     $.when(buscarRSS()).then(function (){
         alert("Refresca la lista tras guardar los nuevos");
