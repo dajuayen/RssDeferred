@@ -33,7 +33,8 @@ module.exports.metadata =
     "com.red_folder.phonegap.plugin.backgroundservice": "2.0.0",
     "cordova-sqlite-storage": "1.2.2",
     "cordova-plugin-splashscreen": "4.0.0",
-    "com.red_folder.phonegap.plugin.backgroundservice.sample": "4.0.0"
+    "com.red_folder.phonegap.plugin.backgroundservice.sample": "4.0.0",
+    "cordova-plugin-android-support-v4": "21.0.1"
 };
 // BOTTOM OF METADATA
 });

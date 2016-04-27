@@ -12,6 +12,9 @@
         },
         "com.red_folder.phonegap.plugin.backgroundservice.sample": {
             "PACKAGE_NAME": "com.prueba.basica.deferred"
+        },
+        "cordova-plugin-android-support-v4": {
+            "PACKAGE_NAME": "com.prueba.basica.deferred"
         }
     },
     "dependent_plugins": {

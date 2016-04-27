@@ -22,13 +22,24 @@ package com.prueba.basica.deferred;
 import android.os.Bundle;
 import org.apache.cordova.*;
 
-public class MainActivity extends CordovaActivity
-{
+import android.content.SharedPreferences;
+import android.content.Context;
+
+public class MainActivity extends CordovaActivity {
+
+    //public SharedPreferences MISPREFS;
+    public static Context context;
+
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
+        SharedPreferences sharedPreferences = getSharedPreferences("MisPrefencias", Context.MODE_PRIVATE);
+        MainActivity.context = getApplicationContext();
         loadUrl(launchUrl);
+    }
+
+    public static Context getAppContext() {
+        return MainActivity.context;
     }
 }

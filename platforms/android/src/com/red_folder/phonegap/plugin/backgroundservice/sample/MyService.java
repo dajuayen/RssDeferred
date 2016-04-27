@@ -52,7 +52,7 @@ import com.red_folder.phonegap.plugin.backgroundservice.BackgroundService;
         /*
         Hay que cambiar el nombre del package para cada proyecto
          */
-import com.servicesqlite.reader.MainActivity;
+import com.prueba.basica.deferred.MainActivity;
 
 public class MyService extends BackgroundService {
 
@@ -161,9 +161,9 @@ public class MyService extends BackgroundService {
         /*
         Hay que cambiar el nombre del package para cada proyecto
          */
-        int smallIconId = resources.getIdentifier("icon", "drawable", "com.servicesqlite.reader");
+        int smallIconId = resources.getIdentifier("icon", "drawable", "com.prueba.basica.deferred");
         if (smallIconId == 0) {
-            smallIconId = resources.getIdentifier("icon", "drawable", "com.servicesqlite.reader");
+            smallIconId = resources.getIdentifier("icon", "drawable", "com.prueba.basica.deferred");
         }
 
         NotificationCompat.Builder notif = new NotificationCompat.Builder(this)
