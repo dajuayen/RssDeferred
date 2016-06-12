@@ -11,19 +11,19 @@ and open the template in the editor.
         <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src: 'self' 'unsafe-inline' 'unsafe-eval'">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-      
+
 
     </head>
     <body data-role="page" id="principal">
 
         <header data-role="header" data-position="fixed" data-theme="b">
-            <h1> * PROGRAMA LECTOR DE RSS * </h1>
+            <h1>READER RSS</h1>
             <nav data-role="navbar">
                 <ul>
-                    <li><a href="#" data-icon="grid" class="ui-btn-active" onclick="descargar();">Summary</a></li>
-                    <li><a href="#" data-icon="star" data-role="button" onclick="enableTimer();">FAVS</a></li>
-                    <li><a href="#" data-icon="delete" data-role="button" onclick="registerForBootStart();">eliminar</a></li>
-                    <li><a href="#" data-icon="gear" data-role="button" onclick="registerForUpdates();">Setup</a></li>
+                    <li><a href="#" data-icon="grid" class="ui-btn-active" ></a></li>
+                    <li><a href="#" data-icon="star" data-role="button" ></a></li>
+                    <li><a href="#" data-icon="delete" data-role="button" ></a></li>
+                    <li><a href="#" data-icon="gear" data-role="button"  ></a></li>
                 </ul>
             </nav>
         </header>
@@ -52,6 +52,11 @@ and open the template in the editor.
                     </tr>
                 </table>
             </div>
+
+            <div>
+                <a href="prueba.html">Pasar a feed.html</a>
+
+            </div>
             <div data-role="content" data-theme="d">
                 <ul id="lista" data-role="listview" data-inset="true" data-theme="d" data-divider-theme="a" data-count-theme="a"></ul>  
             </div>
@@ -60,31 +65,30 @@ and open the template in the editor.
         <footer data-role="footer" data-theme="e" data-position="fixed">
             <nav data-role="navbar" data-position="fixed">
                 <ul>
-                    <li><a href="#" data-icon="grid">Summary</a></li>
-                    <li><a href="#" data-icon="star" class="ui-btn-active">Favs</a></li>
-                    <li><a href="#" data-icon="gear">Setup</a></li>
+                    <li><a href="#" data-icon="reader-primero" id="losprimeros" onclick="losPrimeros()"></a></li>
+                    <li><a href="#" data-icon="reader-next" id="losanteriores" onclick="losAnteriores()"></a></li>
+                    <li><a href="#" data-icon="reader-siguientes" id="lossiguientes" onclick="losSiguientes()"></a></li>
+                    <li><a href="#" data-icon="reader-ultimo" id="losultimos" onclick="losUltimos()"></a></li>
                 </ul>
-            </nav>
-            <div data-role="content" data-theme="b">
-                <h3> *** Plugin Service + Preferences + SQLite + JQuery + ReaderRSS *** </h3>
-                <h2>Test Deferred</h2>
-            </div>
-                        
+            </nav> 
         </footer> 
 
 
         <script type="text/javascript" src="cordova.js"></script>
-               
+
         <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script type="text/javascript" src="js/operaServicio.js"></script>        
+        <script type="text/javascript" src="js/index.js"></script> 
+        <script type="text/javascript" src="js/servicio.js"></script>        
         <script type="text/javascript" src="js/bd_deferred.js"></script>
-         
+        <script type="text/javascript" src="js/navegacion.js"></script>
+        <script type="text/javascript" src="js/feed.js"></script>
 
         <!-- <script type="text/javascript" src="myService.js"></script> -->
         <script>
-            iniciarServicio();
-            mostrarLista2();
+                        iniciarServicio();
+                        mostrarLista2();
+                        app.initialize();
         </script>
     </body>
 </html>

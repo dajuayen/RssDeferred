@@ -167,7 +167,7 @@ public class MyService extends BackgroundService {
         }
 
         NotificationCompat.Builder notif = new NotificationCompat.Builder(this)
-                .setContentTitle("readerRSS-complete")
+                .setContentTitle("ReaderRSS")
                 .setSmallIcon(smallIconId)
                 .setContentText("Hay rss nuevos sin leer.");               
 

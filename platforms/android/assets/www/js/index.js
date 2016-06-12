@@ -17,8 +17,10 @@
  * under the License.
  */
 var app = {
+    
     // Application Constructor
     initialize: function() {
+        this.elid = 0,
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -35,6 +37,12 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
+    setElId: function(id){
+      this.elid = id;  
+    },
+    getElId: function(){
+      return this.elid;  
+    },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
@@ -46,6 +54,7 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
+    
+    
 };
 
-app.initialize();

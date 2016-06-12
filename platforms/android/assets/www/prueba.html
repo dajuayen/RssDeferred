@@ -14,16 +14,17 @@ and open the template in the editor.
 
 
     </head>
-    <body data-role="page" id="principal">
+    <body data-role="page" id="prueba" >
 
         <header data-role="header" data-position="fixed" data-theme="b">
             <h1>READER RSS</h1>
+            <h2>Feed</h2>
             <nav data-role="navbar">
                 <ul>
                     <li><a href="#" data-icon="grid" class="ui-btn-active" ></a></li>
                     <li><a href="#" data-icon="star" data-role="button" ></a></li>
                     <li><a href="#" data-icon="delete" data-role="button" ></a></li>
-                    <li><a href="#" data-icon="gear" data-role="button"  ></a></li>
+                    <li><a href="#" data-icon="gear" data-role="button" ></a></li>
                 </ul>
             </nav>
         </header>
@@ -52,27 +53,26 @@ and open the template in the editor.
                     </tr>
                 </table>
             </div>
-
-            <div>
-                <a href="prueba.html">Pasar a feed.html</a>
-
-            </div>
             <div data-role="content" data-theme="d">
-                <ul id="lista" data-role="listview" data-inset="true" data-theme="d" data-divider-theme="a" data-count-theme="a"></ul>  
+                <h3> Aqui ira el contenido</h3>
+                <ul>
+                    <li><p id="titulo"></p></li>                    
+                    <li><p id="fecha"></p></li>
+                    <li><p id="descripcion"></p></li>                    
+                </ul>                
+                <a data-icon="grid" id="enlace">Detalles</a>
             </div>
         </article>
-
-        <footer data-role="footer" data-theme="e" data-position="fixed">
+         <footer data-role="footer" data-theme="e" data-position="fixed">
             <nav data-role="navbar" data-position="fixed">
                 <ul>
-                    <li><a href="#" data-icon="reader-primero" id="losprimeros" onclick="losPrimeros()"></a></li>
-                    <li><a href="#" data-icon="reader-next" id="losanteriores" onclick="losAnteriores()"></a></li>
-                    <li><a href="#" data-icon="reader-siguientes" id="lossiguientes" onclick="losSiguientes()"></a></li>
-                    <li><a href="#" data-icon="reader-ultimo" id="losultimos" onclick="losUltimos()"></a></li>
+                    <li><a href="#" data-icon="reader-primero" id="primero" onclick="primero()"></a></li>
+                    <li><a href="#" data-icon="reader-next" id="anterior" onclick="anterior()"></a></li>
+                    <li><a href="#" data-icon="reader-siguientes" id="siguiente" onclick="siguiente()"></a></li>
+                    <li><a href="#" data-icon="reader-ultimo" id="ultimo" onclick="ultimo()"></a></li>
                 </ul>
             </nav> 
-        </footer> 
-
+        </footer>
 
         <script type="text/javascript" src="cordova.js"></script>
 
@@ -80,15 +80,11 @@ and open the template in the editor.
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script> 
         <script type="text/javascript" src="js/servicio.js"></script>        
-        <script type="text/javascript" src="js/bd_deferred.js"></script>
+        <script type="text/javascript" src="js/bd_deferred.js"></script> 
         <script type="text/javascript" src="js/navegacion.js"></script>
         <script type="text/javascript" src="js/feed.js"></script>
-
-        <!-- <script type="text/javascript" src="myService.js"></script> -->
         <script>
-                        iniciarServicio();
-                        mostrarLista2();
-                        app.initialize();
+               cargarDatos();
         </script>
     </body>
 </html>

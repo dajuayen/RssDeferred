@@ -37,11 +37,9 @@ var app = {
 var myService;
 
 function iniciarServicio() {
-    document.addEventListener('deviceready', function() {
-        alert('Entro en iniciarServicio');
+    document.addEventListener('deviceready', function() {    
         myService = cordova.plugins.myService;
-        arrancar();
-//        $.when(mostrarLista2).then(arrancar);  
+        arrancar();  
     }, true); 
 }
 
@@ -51,14 +49,12 @@ function iniciarServicio() {
  * @returns {undefined}
  */
 function handleSuccess(servicio) {
-//    estadoServicio(servicio);
-//    alert('Entro en handleSuccess');
-    alert('Info : \n Servicio >>>> ' + servicio.ServiceRunning
-            + '\n Timer >>>> ' + servicio.TimerEnabled
-            + '\n Boot >>>> ' + servicio.RegisteredForBootStart
-            + '\n Updates >>>> ' + servicio.RegisteredForUpdates
-            + '\n Configuration >>>> ' + servicio.Configuration.fecha
-            + '\n LatestResult  >>>> ' + servicio.LatestResult.Message);
+//    alert('Info : \n Servicio >>>> ' + servicio.ServiceRunning
+//            + '\n Timer >>>> ' + servicio.TimerEnabled
+//            + '\n Boot >>>> ' + servicio.RegisteredForBootStart
+//            + '\n Updates >>>> ' + servicio.RegisteredForUpdates
+//            + '\n Configuration >>>> ' + servicio.Configuration.fecha
+//            + '\n LatestResult  >>>> ' + servicio.LatestResult.Message);
     estadoServicio(servicio);
 }
 
@@ -76,7 +72,6 @@ function handleError(servicio) {
  * Button Handlers
  */
 function getStatus() {
-    alert('Entro en getStatus');
     myService.getStatus(function(r) {
         handleSuccess(r);
         estadoServicio(r);
@@ -90,7 +85,6 @@ function getStatus() {
  * registra el servicio para escuchar cambios. 
  */
 function arrancar() {
-    alert('Entro en arrancar');
     myService.getStatus(function(info) {
         alert('Iniciamos el arranque en arrancar')
         handleSuccess(info);
@@ -126,21 +120,14 @@ function arrancar() {
                     alert('Boot registrado 2');
                 }, handleError(e));
             }
-            //servicio.RegisteredForUpdates registerForUpdates
+            
             alert("servicio.RegisteredForUpdates = " + info.RegisteredForUpdates);
-            /*alert("servicio.registeredForUpdates = " + info.registeredForUpdates);
-             if (!info.RegisteredForUpdates) {
-             myService.registerForUpdates(function(r) {
-             handleSuccess(r);
-             alert('Updates activadas 2');
-             }, handleError(e));
-             }*/
+           
         }
     });
 }
 
 function arrancar2() {
-    alert('Entro en arrancar2');
     myService.getStatus(function(r) {
         startService()
     },
@@ -176,7 +163,6 @@ function setServiceConfig(fecha) {
  * @param {type} servicio
  */
 function estadoServicio(servicio) {
-    alert('Actualizamos la información del servicio');
     var serviceStatus = document.getElementById("serviceStatus");
     var timerStatus = document.getElementById("timerStatus");
     var bootStatus = document.getElementById("bootStatus");
@@ -218,12 +204,10 @@ function estadoServicio(servicio) {
      * 
      */
     if (servicio.Configuration != null)
-    {
-        alert('entro en configuración');
+    {      
         try {
             var fechaToTxt = document.getElementById("fechaTxt");
             var conf = servicio.Configuration.fecha;
-            alert('Configuracion : ' + conf);
             fechaToTxt.innerHTML = conf;
         } catch (err) {
         }
@@ -233,11 +217,9 @@ function estadoServicio(servicio) {
      al servicioRSS se lo pasamos al div "resultMessage" para que lo muestre*/
     if (servicio.LatestResult != null)
     {
-        alert('entro en LatestResult');
         try {
             var resultMessage = document.getElementById("resultMessage");
-            var aux = servicio.LatestResult.Message;
-            alert('LatestResult.Message :' + aux);
+            var aux = servicio.LatestResult.Message;            
             resultMessage.innerHTML = aux;
         } catch (err) {
         }
